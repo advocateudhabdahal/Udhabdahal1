@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Udhab Dahal — lawyer and management expert offering legal consultation, business registration, liquidation, and legal research in Kathmandu, Nepal.">
+  <meta name="theme-color" content="#102c2b">
+  <title>Udhab Dahal | Legal Counsel & Management Expert</title>
+  <style>
+    :root {
+      --ink: #172b2a;
+      --muted: #63716e;
+      --green: #153d38;
+      --green-2: #24584f;
+      --gold: #c7a56a;
+      --cream: #f7f5ef;
+      --paper: #fffefa;
+      --line: rgba(23, 43, 42, .13);
+      --shadow: 0 18px 50px rgba(21, 61, 56, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(1140px, calc(100% - 42px)); margin: 0 auto; }
+    .topbar { background: var(--green); color: #fff; font-size: .84rem; }
+    .topbar-inner { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; flex-wrap: wrap; }
+    .topbar a { color: #f0dfbf; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,254,250,.94); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 78px; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.03em; }
+    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--gold); color: var(--green); font-family: Georgia, serif; font-size: 1.25rem; }
+    .brand small { display: block; color: var(--muted); font-size: .67rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 25px; font-size: .9rem; font-weight: 650; }
+    .nav-links a:not(.button):hover { color: var(--green-2); }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: 9px; padding: 12px 19px; border: 1px solid var(--green); background: var(--green); color: white; font-weight: 700; font-size: .9rem; transition: transform .2s, background .2s; cursor: pointer; }
+    .button:hover { transform: translateY(-2px); background: var(--green-2); }
+    .button.outline { background: transparent; color: var(--green); }
+    .button.outline:hover { background: var(--green); color: white; }
+    .menu-toggle { display: none; background: none; border: 1px solid var(--line); padding: 8px 11px; color: var(--ink); font-size: 1.25rem; }
+    .hero { background: var(--cream); overflow: hidden; position: relative; }
+    .hero::before { content: ""; position: absolute; width: 440px; height: 440px; border: 1px solid rgba(199,165,106,.35); border-radius: 50%; right: -130px; top: -190px; box-shadow: 0 0 0 38px rgba(199,165,106,.05), 0 0 0 78px rgba(199,165,106,.04); }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 60px; align-items: center; padding: 88px 0 92px; position: relative; }
+    .eyebrow { color: #9a7944; font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .18em; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin: 17px 0 20px; max-width: 680px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.8rem, 5.7vw, 5.15rem); line-height: 1.03; font-weight: 500; letter-spacing: -.055em; }
+    h1 em { color: var(--green-2); font-weight: 500; }
+    .hero-copy { max-width: 590px; color: #5e6b68; font-size: 1.08rem; margin-bottom: 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 28px; color: var(--muted); font-size: .85rem; }
+    .hero-note span { display: inline-block; width: 34px; height: 1px; background: var(--gold); }
+    .portrait-wrap { position: relative; max-width: 410px; justify-self: center; width: 100%; }
+    .portrait-frame { padding: 13px; border: 1px solid rgba(199,165,106,.7); position: relative; background: rgba(255,255,255,.45); }
+    .portrait { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: #d9e0d8; }
+    .portrait-fallback { display: none; aspect-ratio: 4 / 5; background: linear-gradient(145deg,#dce4dc,#aebfb3); color: var(--green); place-items: center; font: 5rem Georgia,serif; }
+    .portrait-caption { position: absolute; left: -25px; bottom: 38px; background: var(--green); color: white; padding: 17px 22px; box-shadow: var(--shadow); }
+    .portrait-caption strong { display: block; font-family: Georgia,serif; font-size: 1.2rem; font-weight: 500; }
+    .portrait-caption small { color: #d6e0db; font-size: .77rem; }
+    section { padding: 86px 0; }
+    .section-head { max-width: 650px; margin-bottom: 42px; }
+    .section-head h2 { margin: 10px 0 14px; font: 500 clamp(2.1rem, 4vw, 3.35rem)/1.12 Georgia,serif; letter-spacing: -.04em; }
+    .section-head p { color: var(--muted); margin-bottom: 0; }
+    .stats { display: grid; grid-template-columns: repeat(4,1fr); background: var(--green); color: white; }
+    .stat { padding: 28px 24px; border-right: 1px solid rgba(255,255,255,.16); }
+    .stat:last-child { border-right: 0; }
+    .stat strong { display: block; color: #e2c58f; font: 500 2.2rem Georgia,serif; }
+    .stat span { color: #e0e9e4; font-size: .86rem; }
+    .about-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: 70px; align-items: start; }
+    .about-aside { padding: 28px; background: var(--cream); border-top: 3px solid var(--gold); }
+    .about-aside h3 { font: 500 1.55rem Georgia,serif; margin-bottom: 18px; }
+    .values { display: flex; flex-wrap: wrap; gap: 8px; }
+    .value { padding: 7px 11px; border: 1px solid #d6d9cf; color: var(--green); font-size: .82rem; font-weight: 700; }
+    .about-copy p { color: var(--muted); }
+    .education { margin-top: 27px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .education h3 { font: 500 1.45rem Georgia,serif; }
+    .education-list { display: grid; gap: 14px; }
+    .education-item { display: flex; gap: 14px; align-items: flex-start; }
+    .education-item .dot { margin-top: 9px; flex: 0 0 8px; height: 8px; width: 8px; border-radius: 50%; background: var(--gold); }
+    .education-item strong { display: block; }
+    .education-item span { color: var(--muted); font-size: .9rem; }
+    .services-section { background: var(--cream); }
+    .service-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 15px; }
+    .service-card { background: var(--paper); border: 1px solid var(--line); padding: 25px 22px; min-height: 225px; transition: transform .2s, box-shadow .2s; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .service-number { color: #a07e49; font: 500 1.05rem Georgia,serif; }
+    .service-card h3 { margin: 27px 0 10px; font: 500 1.35rem Georgia,serif; }
+    .service-card p { color: var(--muted); font-size: .9rem; margin-bottom: 0; }
+    .achievements-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .achievement-list { list-style: none; margin: 0; padding: 0; }
+    .achievement-list li { display: flex; gap: 15px; padding: 19px 0; border-bottom: 1px solid var(--line); }
+    .check { display: grid; place-items: center; flex: 0 0 28px; height: 28px; background: #e9eee7; color: var(--green); font-weight: 900; }
+    .achievement-list strong { display: block; }
+    .achievement-list span { color: var(--muted); font-size: .9rem; }
+    .research-card { padding: 31px; background: var(--green); color: white; }
+    .research-card .eyebrow { color: #e2c58f; }
+    .research-card h3 { margin: 13px 0; font: 500 1.8rem Georgia,serif; }
+    .research-card p { color: #d9e2dc; }
+    .research-card .research-tag { display: inline-block; margin: 4px 5px 0 0; padding: 6px 9px; border: 1px solid rgba(255,255,255,.24); font-size: .78rem; color: #e8eee9; }
+    .contact-section { background: #f2f0e9; }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
+    .contact-details { display: grid; gap: 15px; margin-top: 25px; }
+    .contact-line { display: flex; gap: 14px; align-items: flex-start; }
+    .contact-icon { display: grid; place-items: center; width: 40px; height: 40px; flex: 0 0 40px; border: 1px solid #d3d6ca; color: var(--green); }
+    .contact-line small { display: block; color: var(--muted); font-size: .78rem; }
+    .contact-line a, .contact-line strong { overflow-wrap: anywhere; font-weight: 700; }
+    .contact-panel { background: var(--paper); padding: 30px; border: 1px solid var(--line); }
+    .contact-panel h3 { font: 500 1.65rem Georgia,serif; }
+    .contact-panel p { color: var(--muted); font-size: .95rem; }
+    .contact-panel .button { margin-top: 6px; }
+    footer { background: #102c2b; color: #d8e2dc; padding: 25px 0; font-size: .82rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; }
+        .footer-inner span { color: #aebeb5; }
+    .back-top { color: #e2c58f; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+    @media (max-width: 900px) {
+      .hero-grid { gap: 35px; padding: 65px 0; }
+      .nav-links { gap: 15px; }
+      .service-grid { grid-template-columns: repeat(2,1fr); }
+      .about-grid, .achievements-grid, .contact-grid { gap: 38px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(100% - 30px, 540px); }
+      .topbar-inner { justify-content: center; text-align: center; }
+      .nav { min-height: 68px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; left: 0; right: 0; top: 68px; padding: 18px 22px 22px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 16px; }
+      .nav-links.open { display: flex; }
+      .nav-links .button { width: 100%; }
+      .hero-grid { grid-template-columns: 1fr; padding: 58px 0 65px; gap: 45px; }
+      h1 { font-size: clamp(2.75rem, 13vw, 4.1rem); }
+      .portrait-wrap { width: min(85%, 360px); }
+      .portrait-caption { left: -17px; bottom: 25px; }
+      section { padding: 65px 0; }
+      .stats { grid-template-columns: repeat(2,1fr); }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.16); }
+      .about-grid, .achievements-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+      .service-grid { gap: 10px; }
+      .service-card { padding: 20px 17px; min-height: 205px; }
+    }
+    @media (max-width: 390px) { .service-grid { grid-template-columns: 1fr; } .service-card { min-height: auto; } .hero-actions .button { width: 100%; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Legal counsel · Business advisory · Liquidation</span>
+      <a href="mailto:advocateudhabdahal@gmail.com">advocateudhabdahal@gmail.com</a>
+    </div>
+  </div>
+
+  <header>
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Udhab Dahal home">
+        <span class="brand-mark">UD</span>
+        <span>Udhab Dahal<small>Legal & Management</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#achievements">Experience</a>
+        <a href="#contact" class="button">Contact Me ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Law · Strategy · Solutions</div>
+          <h1>Clear counsel.<br><em>Confident decisions.</em></h1>
+          <p class="hero-copy">I’m Udhab Dahal, a lawyer and management expert helping individuals, cooperatives, and businesses navigate legal matters with clarity, care, and professionalism.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Discuss Your Legal Needs <span aria-hidden="true">↗</span></a>
+            <a class="button outline" href="#services">Explore Services</a>
+          </div>
+          <div class="hero-note"><span></span> Based in Kathmandu, Ramkot, Nepal</div>
+        </div>
+        <div class="portrait-wrap reveal">
+          <div class="portrait-frame">
+            <img class="portrait" id="profilePhoto" src="personal/image.jpg" alt="Portrait of Udhab Dahal" onerror="this.style.display='none'; document.getElementById('portraitFallback').style.display='grid';">
+            <div class="portrait-fallback" id="portraitFallback" aria-label="UD initials">UD</div>
+          </div>
+          <div class="portrait-caption"><strong>Udhab Dahal</strong><small>Lawyer & Management Expert</small></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="stats reveal" aria-label="Professional highlights">
+        <div class="stat"><strong>12+ Years</strong><span>Legal experience</span></div>
+        <div class="stat"><strong>1,000+</strong><span>Cases completed</span></div>
+        <div class="stat"><strong>10+</strong><span>Supreme Court PIL cases</span></div>
+        <div class="stat"><strong>Multi-sector</strong><span>Legal & business support</span></div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container about-grid">
+        <aside class="about-aside reveal">
+          <div class="eyebrow">What guides my work</div>
+          <h3>Principles behind every professional relationship.</h3>
+          <div class="values">
+            <span class="value">Transparent</span>
+            <span class="value">Collaborative</span>
+            <span class="value">Ambitious</span>
+          </div>
+        </aside>
+        <div class="about-copy reveal">
+          <div class="eyebrow">About me</div>
+          <div class="section-head" style="margin-bottom:20px">
+            <h2>Legal knowledge with a management perspective.</h2>
+          </div>
+          <p>Udhab Dahal has worked in the legal profession for more than 12 years, handling matters across different areas of law. With over 1,000 cases completed, he brings broad practical experience to legal challenges faced by individuals, cooperatives, and businesses.</p>
+          <p>His work includes supporting organisations through business formation and liquidation, as well as providing legal advice to cooperatives and working with NGOs and INGOs. Alongside his legal practice, he applies management knowledge to help clients understand the legal and organisational dimensions of their decisions.</p>
+          <div class="education">
+            <h3>Education & professional credentials</h3>
+            <div class="education-list">
+              <div class="education-item"><span class="dot"></span><div><strong>LLB in Law</strong><span>Legal education and professional foundation</span></div></div>
+              <div class="education-item"><span class="dot"></span><div><strong>MBS in Management</strong><span>Business and organisational management</span></div></div>
+              <div class="education-item"><span class="dot"></span><div><strong>Professional Liquidator</strong><span>Support for formal winding-up processes</span></div></div>
+              <div class="education-item"><span class="dot"></span><div><strong>Published legal research</strong><span>Research papers on cooperatives and business management in journals</span></div></div>
+            </div>
+                      </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">How I can help</div>
+          <h2>Professional services, tailored to your needs.</h2>
+          <p>Practical legal and business support, with an emphasis on clear communication and informed decisions.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal"><span class="service-number">01 / Advisory</span><h3>Legal Consultation</h3><p>Discuss legal concerns, understand available options, and identify practical next steps.</p></article>
+          <article class="service-card reveal"><span class="service-number">02 / Business</span><h3>Business Registration</h3><p>Guidance for business establishment, documentation, and registration processes.</p></article>
+          <article class="service-card reveal"><span class="service-number">03 / Resolution</span><h3>Liquidation</h3><p>Professional support for organisations navigating formal closure and winding-up matters.</p></article>
+          <article class="service-card reveal"><span class="service-number">04 / Research</span><h3>Legal Research</h3><p>Research and analysis relating to legal issues, cooperatives, and business management.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Experience & achievements</div>
+          <h2>Built on practice, research, and service.</h2>
+        </div>
+        <div class="achievements-grid">
+          <ul class="achievement-list reveal">
+            <li><span class="check">✓</span><div><strong>1,000+ cases completed</strong><span>Experience across a range of legal matters.</span></div></li>
+            <li><span class="check">✓</span><div><strong>Legal advisor to cooperatives</strong><span>Supporting cooperative organisations with legal matters.</span></div></li>
+            <li><span class="check">✓</span><div><strong>High Court involvement in Patan</strong><span>Professional membership or role as provided in the profile.</span></div></li>
+            <li><span class="check">✓</span><div><strong>10+ public interest litigation cases</strong><span>Cases handled at the Supreme Court level.</span></div></li>
+            <li><span class="check">✓</span><div><strong>Legal and management qualifications</strong><span>LLB, MBS, and professional liquidator credentials.</span></div></li>
+          </ul>
+          <div class="research-card reveal">
+            <div class="eyebrow">Research & insight</div>
+            <h3>Contributing to legal and business knowledge.</h3>
+            <p>Published research papers in journals on cooperative affairs and business management reflect an interest in strengthening both legal practice and organisational understanding.</p>
+            <span class="research-tag">Cooperative law</span><span class="research-tag">Business management</span><span class="research-tag">Legal research</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <div class="eyebrow">Get in touch</div>
+          <div class="section-head" style="margin-bottom:15px">
+            <h2>Let’s talk about your legal needs.</h2>
+            <p>For enquiries about legal consultation, business registration, liquidation, or research, reach out by email or connect on Facebook.</p>
+          </div>
+          <div class="contact-details">
+            <div class="contact-line"><span class="contact-icon" aria-hidden="true">✉</span><div><small>Email</small><a href="mailto:advocateudhabdahal@gmail.com">advocateudhabdahal@gmail.com</a></div></div>
+            <div class="contact-line"><span class="contact-icon" aria-hidden="true">⌖</span><div><small>Location</small><strong>Kathmandu, Ramkot, Nepal</strong></div></div>
+            <div class="contact-line"><span class="contact-icon" aria-hidden="true">f</span><div><small>Facebook</small><a href="https://www.facebook.com/share/1BpZKhUS48/" target="_blank" rel="noopener noreferrer">Visit Facebook profile ↗</a></div></div>
+          </div>
+        </div>
+        <div class="contact-panel reveal">
+          <h3>Make an enquiry</h3>
+          <p>Send an email with a short description of your enquiry. Please avoid including confidential details until an appropriate professional channel has been established.</p>
+          <a class="button" href="mailto:advocateudhabdahal@gmail.com?subject=Legal%20Enquiry">Email Udhab Dahal ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Udhab Dahal. <span>All rights reserved.</span></div>
+      <a class="back-top" href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    // Current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reveal sections as they enter the viewport, with a fallback for older browsers
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>
